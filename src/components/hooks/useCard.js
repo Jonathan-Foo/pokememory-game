@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import fetchCards from './fetchCards';
 
 export default function useCard() {
-  const [cards, setCards] = useState();
-  const [history, setHistory] = useState();
+  const [cards, setCards] = useState([]);
 
   const updateNewCards = async (quantity) => {
     const newCards = await fetchCards.newCards(quantity);
@@ -13,12 +12,11 @@ export default function useCard() {
   const randomizeCards = () => {
     setCards(prevCards => fetchCards.shuffle(prevCards));
   }
-  
-  
 
   return [
     cards,
     updateNewCards,
-    randomizeCards
+    randomizeCards,
+
   ]
 }

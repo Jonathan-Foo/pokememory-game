@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import testIcon from '../../assests/7.png'
 
-const Card = () => {
+
+const Card = ({ cardInfo , cardClickHandler }) => {
+  const clickHander = () => {
+    cardClickHandler(id);
+  }
+  const {id, name, sprite} = cardInfo
+
   return (
-    <CardWrapper >
-      <Icon src={testIcon} alt="squirtle" draggable={false} />
-    
-      <p>Squirtle</p>
+    <CardWrapper onClick={clickHander}>
+      <Icon src={sprite} alt={name} draggable={false} />
+      <p>{name}</p>
     </CardWrapper>
   )
 }
@@ -33,6 +37,7 @@ const CardWrapper = styled.div`
     }
     
     @media (max-width: 750px) {
+      font-size: .6em;
       width: 150px;
       height: 150px;
   }
@@ -40,9 +45,9 @@ const CardWrapper = styled.div`
 `
 
 const Icon = styled.img`
-    width: 80%;
-    margin-bottom: -2em;
-    margin-top: -3em;
+    width: 70%;
+    margin-bottom: -1em;
+    margin-top: -1em
 `
 
 export default Card;

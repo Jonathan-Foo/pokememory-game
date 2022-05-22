@@ -9,7 +9,6 @@ import Main from './components/Main'
 const App = () => {
   return (
     <>
-
       <Header/>
       <Border />
       <Main />

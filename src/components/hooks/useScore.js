@@ -17,33 +17,29 @@ const useScore = () => {
     }
 
     const incrementScore = () => {
-        setScore(prevScore => scoreFormat(parseInt(prevScore) + 10))
+        setScore(prevScore => {
+            const score = scoreFormat(parseInt(prevScore) + 10)
+            
+            if (parseInt(score) > parseInt(highScore)) {
+                 setHighScore(score.slice())
+            }
+
+            return score;
+        })
+        
     }
 
     const resetScore = () => {
         setScore('00000')
     }
 
-    const newHighScoreCheck = () => {
-        if (parseInt(score) > parseInt(highScore)) {
-            return setHighScore(score.slice())
-        } else {
-            return 
-        }
-    }
-
-    const correctAnswer = () => {
-        incrementScore();
-        newHighScoreCheck();
-    }
 
 
     return [
         score,
         highScore,
         resetScore,
-        correctAnswer,
-
+        incrementScore,
     ]
 }
 

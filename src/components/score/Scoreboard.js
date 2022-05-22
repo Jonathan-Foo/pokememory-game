@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Scoreboard = () => {
+const Scoreboard = ({score, highScore}) => {
   return (
+    
     <ScoreboardWrapper>
-      <p>HIGH-SCORE: 00000</p>
-      <p>YOUR-SCORE: 00000</p>
+      <p>HIGH-SCORE: {highScore}</p>
+      <p>YOUR-SCORE: {score}</p>
     </ScoreboardWrapper>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Grid from './cards/Grid'
 import Scoreboard from './score/Scoreboard'
@@ -7,14 +7,32 @@ import Loading from './share/Loading'
 import useGame from './hooks/useGame'
 
 const Main = () => {
-  const [score, highscore] = useGame();
+  // useGame needs to be deconstructed in order 
+  const [
+    cards,
+    level,
+    score, 
+    highscore, 
+    gameOver, 
+    loading, 
+    cardClickHandler, 
+    beginLvl,
+    newGame,
+    resetLevel,
+    updateNewCards,
+  ] = useGame();
+
+
+  useEffect(() => {
+    beginLvl();
+  }, [level])
 
   return (
     <MainWrapper>
-      {/* <Loading /> */}
-      {/* <Gameover /> */}
-      <Scoreboard />
-      <Grid />
+      <Loading show={loading} />
+      <Gameover show={gameOver} score={score} playAgain={newGame}/>
+      <Scoreboard score={score} highScore={highscore}/>
+      <Grid cards={cards} cardClickHandler={cardClickHandler}/>
     </MainWrapper>
   )
 }

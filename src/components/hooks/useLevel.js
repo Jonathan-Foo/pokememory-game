@@ -8,9 +8,8 @@ const useLevel = () => {
 
     const nextLevel = () => {
         setLevel(prevLevel => {
-            let quantity = prevLevel.lvl + 1;
-            let lvl = prevLevel.quantity + CARD_STEP;
-            
+            let lvl = prevLevel.lvl + 1;
+            let quantity = prevLevel.quantity + CARD_STEP;
             return {quantity, lvl};
         })
     }

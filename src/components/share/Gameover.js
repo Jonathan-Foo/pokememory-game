@@ -5,11 +5,13 @@ import styled from 'styled-components'
 // GameOver needs to knows if it should be shown or not using the const [loadin, setloading] = useState(true) that is either true of false as well as score
 
 const Gameover = ({ score, show, playAgain }) => {
+    const formattedScore = parseInt(score)
+
   return (
     show && (
         <GameOverWrapper >
             <Title>Game Over</Title>
-            <Subtext>Your Final Score Was {score}p</Subtext>
+            <Subtext>Your Final Score Was {formattedScore}p</Subtext>
             <PlayAgainButton onClick={playAgain}>Play Again?</PlayAgainButton>
         </GameOverWrapper>)
   )
@@ -26,6 +28,7 @@ const GameOverWrapper = styled.div`
     align-items: center;
     height: 100%;
     gap: .5em;
+    z-index: 1;
 `
 
 const Title = styled.p`

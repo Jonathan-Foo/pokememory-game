@@ -27,7 +27,9 @@ const getRange = (quantity) => {
 } 
 
 const capitalize = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    const regex = /-[a-z]*/gi;
+    const newStr = str.replace(regex, '');
+    return newStr.charAt(0).toUpperCase() + newStr.slice(1);
 }
 
 
@@ -52,7 +54,7 @@ const preloadImg = (arr) => {
 const newCards = async (quantity) => {
     const intervalArr = getRange(quantity);
     const cards = await pokemonInfoArr(intervalArr);
-    
+    // console.log(cards)
     preloadImg(cards);
     const shuffledCards = shuffle(cards);
     return shuffledCards;

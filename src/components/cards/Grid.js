@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import Card from './Card'
 
-export default function Grid() {
+export default function Grid({ cards, cardClickHandler}) {
+  const cardsElements =  cards.map(cardInfo => {
+    return <Card key={cardInfo.id} cardInfo={cardInfo} cardClickHandler={cardClickHandler}/>
+  })
+
   return (
     <CardGridWrapper>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-
+      {cardsElements}
+      
     </CardGridWrapper>
   )
 }
