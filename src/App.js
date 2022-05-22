@@ -1,9 +1,21 @@
 import React from 'react'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Border from './components/Border'
+import Main from './components/Main'
 
-export default function App() {
+
+
+const App = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+
+      <Header/>
+      <Border />
+      <Main />
+      <Footer/>  
+    </>
   )
 }
+
+export default App;
