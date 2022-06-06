@@ -15,14 +15,18 @@ const Footer = () => {
 
 const FooterWrapper = styled.footer`
     display: flex;
-    
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     background: ${({theme}) => theme.color.mainGrey};
     color: ${({theme}) => theme.color.mainWhite};
-    padding: .5em;
+    padding-block: .5em;
     font-size: .8em;
     gap: .5em;
+    
     
 `
 

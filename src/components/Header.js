@@ -11,7 +11,7 @@ const Header = () => {
   )
 }
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;

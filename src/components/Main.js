@@ -39,7 +39,7 @@ const Main = () => {
 
 export default Main;
 
-const MainWrapper = styled.div`
+const MainWrapper = styled.main`
     position: relative;
     display: flex;
     justify-content: center;
@@ -48,4 +48,5 @@ const MainWrapper = styled.div`
     justify-content: flex-start;
     width: 100%;
     min-height: 613px;
+
 `
