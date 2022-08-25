@@ -3,7 +3,7 @@
 
 A memory game created to explore and learn React functional components
 
-Live Preview :globe_with_meridians:: https://jonathan-foo.github.io/memory-game/
+Live Preview :globe_with_meridians:: https://jonathan-foo.github.io/pokememory-game/
 
 # Features :sparkles:
 - Memory game with over 100+ levels 
